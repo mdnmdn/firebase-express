@@ -16,7 +16,7 @@
     ],
     "rewrites": [ {
         "source": "**",
-        "function": "root"
+        "function": "app"
       }
     ]
   }
