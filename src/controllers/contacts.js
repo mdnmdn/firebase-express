@@ -1,5 +1,3 @@
-'use strict';
-
 const express = require('express');
 const router = express.Router();
 
@@ -8,4 +6,3 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
-//# sourceMappingURL=contacts.js.map
