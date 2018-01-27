@@ -28,7 +28,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', _home2.default);
 app.use('/contacts', _contacts2.default);
 
-var a = _extends({}, b);
 /*
 (async () => {
   const a = await dothings();

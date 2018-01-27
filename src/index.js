@@ -19,7 +19,6 @@ app.use('/', homeController);
 app.use('/contacts', contactController);
 
 
-var a = { ... b};
 /*
 (async () => {
   const a = await dothings();
