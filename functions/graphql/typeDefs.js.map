@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/graphql/typeDefs.js"],"names":["typeDefs"],"mappings":";;;;;AAAA;AACA,MAAMA,WAAY;;;CAAlB;;kBAKeA,Q","file":"typeDefs.js","sourcesContent":["// The GraphQL schema in string form\nconst typeDefs = `\n  type Query { books: [Book] }\n  type Book { title: String, author: String }\n`;\n\nexport default typeDefs;\n"]}
