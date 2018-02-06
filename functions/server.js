@@ -19,15 +19,21 @@ var _home = require('./controllers/home');
 
 var _home2 = _interopRequireDefault(_home);
 
-var _contacts = require('./controllers/contacts');
+var _survey = require('./controllers/survey');
 
-var _contacts2 = _interopRequireDefault(_contacts);
+var _survey2 = _interopRequireDefault(_survey);
 
 var _schema = require('./graphql/schema');
 
 var _schema2 = _interopRequireDefault(_schema);
 
+var _util = require('util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const inspector = require('inspector');
+inspector.open();
+console.log('inspector: ', inspector.url());
 
 // based on https://codeburst.io/express-js-on-cloud-functions-for-firebase-86ed26f9144c
 const app = (0, _express2.default)();
@@ -35,8 +41,22 @@ const app = (0, _express2.default)();
 app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
 
+app.use(function (req, res, next) {
+  console.log('headers!!');
+  // inject default headers
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+const instanceMiddleware = (req, res, next) => {
+  req.instance = req.params.instance || 'default';
+  console.log('instance: ', req.instance);
+  next();
+};
+
 app.use('/', _home2.default);
-app.use('/contacts', _contacts2.default);
+app.use('/survey', instanceMiddleware, _survey2.default);
+app.use('/:instance/survey', _survey2.default);
 
 // The GraphQL endpoint
 app.use('/graphql', _bodyParser2.default.json(), (0, _apolloServerExpress.graphqlExpress)({ schema: _schema2.default }));
@@ -53,7 +73,9 @@ app.use('/graphiql', (0, _apolloServerExpress.graphiqlExpress)({ endpointURL: '/
 */
 
 app.get("/hi", (req, res) => {
-  res.send("i");
+  console.log('hi!');
+  res.header('X-Wow', 'hi!');
+  res.send("hi");
 });
 
 app.post("/post", (req, res) => {
