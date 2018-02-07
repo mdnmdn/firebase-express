@@ -5,11 +5,16 @@ const router = express.Router();
 
 const list = async (req, res) => {
   try{
-  const result = await api.list({});
-  res.send(result);
+  const result = await api.list({
+    instance: req.instance,
+    search: req.query.search,
+    active: req.query.active,
+    
+  });
+    res.send(result);
   }catch(err){
-      res.send(err)
-;  }
+      res.send({error: err.messsage, stackTrace: err.stackTrace});
+  }
 };
 
 router.get('/list', list);

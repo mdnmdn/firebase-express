@@ -1,6 +1,6 @@
-const db = require('../firebase').database;
+const db = require('../firebase').admin.database();
 
-console.log(db);
+//console.log(db);
 
 exports.checkInitSurvey = async (instance = 'default') => {
     const data = await db.ref(`/data/${instance}/surveys`).once('value');
@@ -14,8 +14,35 @@ exports.checkInitSurvey = async (instance = 'default') => {
 exports.list = async ({
     instance, search, active
     }) => {
-        const data = await db.ref(`/data/${instance}/surveys`).once('value');
-        return data;
+        const addr = `/data/${instance}/surveys`;
+        const ref = db.ref(addr);
+        //return new Promise(r => ref.once('value', val => f(val)));
+        const result = await ref.once('value');
+        const data = result.val();
+        const lowerSearch = search ? search.toLowerCase() : null;
+        return Object.keys(data)
+                    .map(k => {
+                        
+                        return {
+                        id: data[k].id,
+                        active: data[k].active,
+                        name: data[k].name,
+                        description: data[k].description,
+                        questions: Object.keys(data[k].questions).length,
+                    }})
+                    .filter(survey => 
+                         !search || 
+                        (
+                            // eslint-disable-next-line eqeqeq
+                            survey.id == search ||
+                            `${survey.description}|${survey.name}`.toLowerCase()
+                                .indexOf(lowerSearch) >= 0 
+                        ))
+                    .filter(survey =>
+                        active === undefined || 
+                        active === '' ||
+                        // eslint-disable-next-line eqeqeq
+                        active == survey.active);
 };
 
 

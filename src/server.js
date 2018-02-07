@@ -2,9 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 
-const inspector = require('inspector');
-inspector.open();
-console.log('inspector: ', inspector.url());
+//const inspector = require('inspector');
+//inspector.open();
+//console.log('inspector: ', inspector.url());
 
 // based on https://codeburst.io/express-js-on-cloud-functions-for-firebase-86ed26f9144c
 const app = express();

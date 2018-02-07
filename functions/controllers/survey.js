@@ -10,10 +10,15 @@ const router = express.Router();
 const list = (() => {
   var _ref = _asyncToGenerator(function* (req, res) {
     try {
-      const result = yield api.list({});
+      const result = yield api.list({
+        instance: req.instance,
+        search: req.query.search,
+        active: req.query.active
+
+      });
       res.send(result);
     } catch (err) {
-      res.send(err);
+      res.send({ error: err.messsage, stackTrace: err.stackTrace });
     }
   });
 

@@ -31,9 +31,9 @@ var _util = require('util');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const inspector = require('inspector');
-inspector.open();
-console.log('inspector: ', inspector.url());
+//const inspector = require('inspector');
+//inspector.open();
+//console.log('inspector: ', inspector.url());
 
 // based on https://codeburst.io/express-js-on-cloud-functions-for-firebase-86ed26f9144c
 const app = (0, _express2.default)();
