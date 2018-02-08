@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	askMe
+</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="/assets/style.css" rel="stylesheet"/>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<style>
+
+/* *****************   badges ************************** */
+.env-badge{
+  position: fixed; 
+  
+  width: 120px;
+  padding: 1px 0;
+  text-align:center;
+  background: #000;
+  color: #eee;
+
+
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 10000;
+
+
+  top: 21px; right: -26px;
+  /*top: 21px; left:-26px;
+    bottom: 21px; right:-26px;*/
+
+
+  
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+    
+  /*-moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); */
+
+}
+
+
+.env-prod .env-badge {display:none;}
+
+.env-test .env-badge {background-color:  #ffd800; color:#000;}
+.env-debug .env-badge, .env-badge {background-color: #ff6a00}
+</style>
+</head>
+<body class="askme">
+
+
+
+
+        <div class="navbar navbar-fixed-top navbar-default ">
+            <div class="container">
+                
+                <div class="navbar-header">
+                    <!--
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                -->
+                    <a href="./" class="navbar-brand">
+                        <img src="assets/logo_askme_32.png" />
+                    </a>
+                </div>
+                <!--
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Management/">Management</a></li>
+                        <li><a href="#">Surveys</a></li>
+                    </ul>
+                </div>
+            -->
+            </div>
+        </div>
+
+        <div class="container body-content">
+            
+
+    <div class="jumbotron">
+        <h1><img src="assets/logo_askme_white_400_claims.png"/></h1>
+        <p class="lead"></p>
+
+        <div class="row">
+            <!--
+            <div class="col-md-push-1 col-md-4">
+                <a href="Survey" class="btn btn-default btn-lg btn-block">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Take a survey
+                </a>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-4">
+                <a href="Management" class="btn btn-default btn-lg btn-block">
+                    <span class="glyphicon glyphicon-briefcase"></span>
+                Survey management
+                </a>
+            </div>
+        -->
+        </div>
+    </div>
+
+
+
+            <hr />
+            <footer>
+                <p class="pull-right">&copy; 2018 - askMe <small>survey solutions</small> </p>
+            </footer>
+        </div>
+    
+	<div class="env-badge">API</div>
+</body>
+</html>

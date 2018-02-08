@@ -1,0 +1,109 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: #223973;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] {
+    max-width: 280px;
+}
+
+
+.navbar-brand {
+    padding-top: 8px;
+}
+
+.askme .navbar-fixed-top {
+    border-bottom: 1px solid #3150aa;
+}
+
+.jumbotron {
+    background-color: #3150aa;
+
+    color: #f8f8f8;
+}
+
+.jumbotron h1 {
+    text-align: center;
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+        
+    }
+    .body-content {
+        padding: 0;
+    }
+}
+
+
+.table td.short {width: 1em;}
+
+
+.buttons.top-right {
+    float:right;
+    margin-top: -3em;
+    right: 0;
+}
+
+.table-pager td {
+    padding-top:.4em;
+    padding-left: 1em;
+}
+
+
+h1.title-management:before {
+    content:' ';
+    display:inline-block;
+    width:.7em;
+    height:.7em;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: orange;
+    margin-right: .3em;
+}
+
+h1.title-survey:before {
+    content:' ';
+    display:inline-block;
+    width:.7em;
+    height:.7em;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #3150aa;
+    margin-right: .3em;
+}
+
+.form-group table label {
+    font-weight: normal;
+}
+
+.form-group table input[type=radio] {
+    margin-right: 1em;
+}

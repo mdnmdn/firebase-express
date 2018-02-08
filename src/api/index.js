@@ -14,7 +14,9 @@ exports.checkInitSurvey = async (instance = 'default') => {
 exports.list = async ({
     instance, search, active
     }) => {
-        const addr = `/data/${instance}/surveys`;
+        const effectiveInstance = instance || 'default';
+        console.log('list', {instance, search, active, effectiveInstance})
+        const addr = `/data/${effectiveInstance}/surveys`;
         const ref = db.ref(addr);
         //return new Promise(r => ref.once('value', val => f(val)));
         const result = await ref.once('value');

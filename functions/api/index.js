@@ -25,7 +25,9 @@ exports.list = (() => {
     var _ref2 = _asyncToGenerator(function* ({
         instance, search, active
     }) {
-        const addr = `/data/${instance}/surveys`;
+        const effectiveInstance = instance || 'default';
+        console.log('list', { instance, search, active, effectiveInstance });
+        const addr = `/data/${effectiveInstance}/surveys`;
         const ref = db.ref(addr);
         //return new Promise(r => ref.once('value', val => f(val)));
         const result = yield ref.once('value');

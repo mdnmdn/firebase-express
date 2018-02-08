@@ -1,0 +1,74 @@
+[debug] [2018-02-08T21:59:02.730Z] ----------------------------------------------------------------------
+[debug] [2018-02-08T21:59:02.733Z] Command:       /usr/local/Cellar/node/8.4.0/bin/node /usr/local/bin/firebase serve --only functions,hosting
+[debug] [2018-02-08T21:59:02.733Z] CLI Version:   3.17.4
+[debug] [2018-02-08T21:59:02.733Z] Platform:      darwin
+[debug] [2018-02-08T21:59:02.733Z] Node Version:  v8.4.0
+[debug] [2018-02-08T21:59:02.734Z] Time:          Thu Feb 08 2018 22:59:02 GMT+0100 (CET)
+[debug] [2018-02-08T21:59:02.734Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-08T21:59:02.757Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-08T21:59:02.758Z] > authorizing via signed-in user
+[debug] [2018-02-08T21:59:02.759Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-08T21:59:02.760Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/-XAooApyAgoDM2B_dXFHCTKJv83dGmzR3SV9SI2XH7w',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Feb 08 2018 22:59:02 GMT+0100 (CET)
+[debug] [2018-02-08T21:59:03.242Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-08T21:59:03.276Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/askme-scai  
+  
+ Thu Feb 08 2018 22:59:03 GMT+0100 (CET)
+[debug] [2018-02-08T21:59:04.466Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-08T21:59:04.467Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/askme-scai/tokens  
+  
+ Thu Feb 08 2018 22:59:04 GMT+0100 (CET)
+[debug] [2018-02-08T21:59:05.198Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/works/courses/scai/react/workspace/askme-fb'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-02-08T21:59:06.816Z] Fetching environment
+[debug] [2018-02-08T21:59:06.818Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/askme-scai  
+  
+ Thu Feb 08 2018 22:59:06 GMT+0100 (CET)
+[debug] [2018-02-08T21:59:06.819Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/askme-scai/apiKeys  
+  
+ Thu Feb 08 2018 22:59:06 GMT+0100 (CET)
+[debug] [2018-02-08T21:59:06.820Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/askme-scai  
+  
+ Thu Feb 08 2018 22:59:06 GMT+0100 (CET)
+[debug] [2018-02-08T21:59:08.076Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-08T21:59:08.076Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/966292492636/clients/_:getWebAppConfig  
+  
+ Thu Feb 08 2018 22:59:08 GMT+0100 (CET)
+[debug] [2018-02-08T21:59:08.085Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-08T21:59:08.093Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-08T21:59:08.095Z] Starting @google-cloud/functions-emulator
+[debug] [2018-02-08T21:59:08.922Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-02-08T21:59:13.211Z] Parsing function triggers
+[info] [hosting] Rewriting /graphiql?query=%7B%0A%20%20surveys(search%3A%20%22a%22%2C%20active%3A%20true)%20%7B%0A%20%20%20%20id%2C%20name%2C%20description%0A%20%20%7D%0A%7D%0A to local function app
+[info] ✔  functions: app: http://localhost:5001/askme-scai/us-central1/app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphiql?query=%7B%0A%20%20surveys%20%7B%0A%20%20%20%20id%2C%20name%2C%20description%0A%20%20%7D%0A%7D%0A to local function app
+[info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /graphiql?query=%7B%0A%20%20surveys%20%7B%0A%20%20%20%20id%2C%20name%2C%20description%0A%20%20%7D%0A%7D%0A to local function app
+[info] [hosting] Rewriting /graphql? to local function app

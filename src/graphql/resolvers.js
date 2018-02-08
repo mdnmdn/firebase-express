@@ -1,3 +1,5 @@
+import api from '../api/index';
+
 
 // Some fake data
 const books = [
@@ -14,7 +16,10 @@ const books = [
 
 // The resolvers
 const resolvers = {
-  Query: { books: () => books },
+  Query: { 
+    //books: () => books 
+    surveys: (parent, args, context, info) => api.list({...args})
+  },
 };
 
 export default resolvers;

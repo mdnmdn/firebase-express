@@ -1,0 +1,24 @@
+#%RAML 1.0
+---
+title: askMe survey API
+baseUri: https://askme-scai.firebaseapp.com/
+version: v1
+
+/survey/list:
+  get:
+    queryParameters:
+      search:
+        displayName: search text
+        type: string
+        description: full text search
+        required: false
+      active:
+        displayName: active survey
+        type: bool
+        description: filter over active surveys
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+                [{"id":125866427,"active":true,"name":"Survey fancy smart","description":"Description for Survey fancy smart","questions":3},{"id":604064560,"active":true,"name":"Survey smart vision","description":"Description for Survey smart vision","questions":2},
