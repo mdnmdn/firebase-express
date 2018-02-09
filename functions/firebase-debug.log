@@ -72,3 +72,4 @@
 [info] [hosting] Rewriting /graphql? to local function app
 [info] [hosting] Rewriting /graphiql?query=%7B%0A%20%20surveys%20%7B%0A%20%20%20%20id%2C%20name%2C%20description%0A%20%20%7D%0A%7D%0A to local function app
 [info] [hosting] Rewriting /graphql? to local function app
+[info] [hosting] Rewriting /build/web-animations-next-lite.min.js.map to local function app

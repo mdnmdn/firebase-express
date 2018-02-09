@@ -6,6 +6,7 @@ version: v1
 
 /survey/list:
   get:
+    description: survey list
     queryParameters:
       search:
         displayName: search text
@@ -16,9 +17,10 @@ version: v1
         displayName: active survey
         type: bool
         description: filter over active surveys
+        required: false
     responses:
       200:
         body:
           application/json:
             example: |
-                [{"id":125866427,"active":true,"name":"Survey fancy smart","description":"Description for Survey fancy smart","questions":3},{"id":604064560,"active":true,"name":"Survey smart vision","description":"Description for Survey smart vision","questions":2},
+                [{"id":125866427,"active":true,"name":"Survey fancy smart","description":"Description for Survey fancy smart","questions":3},{"id":604064560,"active":true,"name":"Survey smart vision","description":"Description for Survey smart vision","questions":2}]
