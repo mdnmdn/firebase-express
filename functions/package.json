@@ -10,7 +10,8 @@
     "logs": "firebase functions:log",
     "compile-functions": "npx babel ../src/ --out-dir ../functions/ --source-maps --ignore node_modules  ; cp ../src/{package.json,package-lock.json,.eslintrc.json,service-account-credentials.json} ../functions/",
     "watch-functions": "npx babel ../src/ --out-dir ../functions/ --watch  --source-maps --ignore node_modules ; cp ../src/{package.json,package-lock.json,.eslintrc.json,service-account-credentials.json} ../functions/",
-    "serve-watch": "nodemon `which firebase` serve --only hosting,functions"
+    "serve-watch": "nodemon `which firebase` serve --only hosting,functions",
+    "generate-apidoc": "api-console build https://askme-scai.firebaseapp.com/api.raml -o ../public/apidoc --json"
   },
   "dependencies": {
     "apollo-server-express": "^1.3.2",

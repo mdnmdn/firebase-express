@@ -9,7 +9,8 @@ const list = async (req, res) => {
     instance: req.instance,
     search: req.query.search,
     active: req.query.active,
-    
+    first: req.query.first || 0,
+    count: req.query.count || 20,
   });
     res.send(result);
   }catch(err){

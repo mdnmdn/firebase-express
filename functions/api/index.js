@@ -23,17 +23,17 @@ exports.checkInitSurvey = (() => {
 
 exports.list = (() => {
     var _ref2 = _asyncToGenerator(function* ({
-        instance, search, active
+        instance, search, active, first = 0, count = 10
     }) {
         const effectiveInstance = instance || 'default';
-        console.log('list', { instance, search, active, effectiveInstance });
+        console.log('list', { instance, search, active, effectiveInstance, first, count });
         const addr = `/data/${effectiveInstance}/surveys`;
         const ref = db.ref(addr);
         //return new Promise(r => ref.once('value', val => f(val)));
         const result = yield ref.once('value');
         const data = result.val();
         const lowerSearch = search ? search.toLowerCase() : null;
-        return Object.keys(data).map(function (k) {
+        let surveyList = Object.keys(data).map(function (k) {
 
             return {
                 id: data[k].id,
@@ -50,7 +50,10 @@ exports.list = (() => {
             return active === undefined || active === '' ||
             // eslint-disable-next-line eqeqeq
             active == survey.active;
-        });
+        })
+        // pagination
+        .slice(first, first + count);
+        return surveyList;
     });
 
     return function (_x) {

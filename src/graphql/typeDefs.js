@@ -9,7 +9,7 @@ const typeDefs = `
     """
     the list of surveys
     """
-    surveys(search: String, active: Boolean): [Survey] 
+    surveys(search: String, active: Boolean, first: Int = 0, count: Int = 20): [Survey] 
   }
   """
   Survey instance

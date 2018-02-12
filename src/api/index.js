@@ -12,17 +12,17 @@ exports.checkInitSurvey = async (instance = 'default') => {
 };
 
 exports.list = async ({
-    instance, search, active
+    instance, search, active, first = 0, count = 10
     }) => {
         const effectiveInstance = instance || 'default';
-        console.log('list', {instance, search, active, effectiveInstance})
+        console.log('list', {instance, search, active, effectiveInstance, first, count})
         const addr = `/data/${effectiveInstance}/surveys`;
         const ref = db.ref(addr);
         //return new Promise(r => ref.once('value', val => f(val)));
         const result = await ref.once('value');
         const data = result.val();
         const lowerSearch = search ? search.toLowerCase() : null;
-        return Object.keys(data)
+        let surveyList = Object.keys(data)
                     .map(k => {
                         
                         return {
@@ -44,7 +44,10 @@ exports.list = async ({
                         active === undefined || 
                         active === '' ||
                         // eslint-disable-next-line eqeqeq
-                        active == survey.active);
+                        active == survey.active)
+                    // pagination
+                    .slice(first, first + count);
+        return surveyList;
 };
 
 

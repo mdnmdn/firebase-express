@@ -18,9 +18,36 @@ version: v1
         type: bool
         description: filter over active surveys
         required: false
+      first:
+        displayName: first visible record (for pagination)
+        type: int
+        description: first visible record (for pagination)
+        required: false
+        default: 0
+      count:
+        displayName: number of visible records (for pagination)
+        type: int
+        description: number of visible records (for pagination)
+        required: false
+        default: 20
     responses:
       200:
         body:
           application/json:
             example: |
-                [{"id":125866427,"active":true,"name":"Survey fancy smart","description":"Description for Survey fancy smart","questions":3},{"id":604064560,"active":true,"name":"Survey smart vision","description":"Description for Survey smart vision","questions":2}]
+                [
+                  {
+                    "id": 125866427,
+                    "active": true,
+                    "name": "Survey fancy smart",
+                    "description": "Description for Survey fancy smart",
+                    "questions": 3
+                  },
+                  {
+                    "id": 604064560,
+                    "active": true,
+                    "name": "Survey smart vision",
+                    "description": "Description for Survey smart vision",
+                    "questions": 2
+                  }
+                ]
