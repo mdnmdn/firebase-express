@@ -14,7 +14,7 @@ const typeDefs = `
   """
   Survey instance
   """
-  type Survey { id: ID, name: String!, description: String, active: Boolean! }
+  type Survey { id: ID, name: String!, description: String, active: Boolean!, numberOfQuestions: Int! }
 `;
 
 export default typeDefs;

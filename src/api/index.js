@@ -30,7 +30,7 @@ exports.list = async ({
                         active: data[k].active,
                         name: data[k].name,
                         description: data[k].description,
-                        questions: Object.keys(data[k].questions).length,
+                        numberOfQuestions: Object.keys(data[k].questions).length,
                     }})
                     .filter(survey => 
                          !search || 
