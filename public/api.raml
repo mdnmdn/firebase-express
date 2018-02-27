@@ -51,3 +51,31 @@ version: v1
                     "numberOfQuestions": 2
                   }
                 ]
+/survey/detail/{surveyId}:
+  get:
+    description: survey definition
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+  /answers:
+    get:
+      description: answer of a specific suvery
+      search:
+        displayName: search text
+        type: string
+        description: full text search
+        required: false      
+      first:
+        displayName: first visible record (for pagination)
+        type: int
+        description: first visible record (for pagination)
+        required: false
+        default: 0
+      count:
+        displayName: number of visible records (for pagination)
+        type: int
+        description: number of visible records (for pagination)
+        required: false
+        default: 20
